@@ -72,11 +72,15 @@ body {
     padding: 20px;
     width: 50%; /* Full width */
     margin-top: 2em;
-    height: 100vh; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    height: 50vh; /* Full height */
 }
 
-
+.inline-scores{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .welcome {
     width: 50%;
@@ -122,4 +126,17 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;   
+}
+
+.in-game{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.play-btn-game-running{
+    position: absolute;
+    top: 57%;
+    left: 3%;
 }

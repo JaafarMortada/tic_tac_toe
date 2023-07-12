@@ -27,7 +27,7 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal.style.display = "block"
   gameDIV.style.display= 'none'
   player1_display_name_and_score.innerHTML = ''
   player2_display_name_and_score.innerHTML = ''
@@ -52,6 +52,7 @@ function getNamesAndPlay () {
     seconed_player = second_player_input.value
     modal.style.display = 'none'
     gameDIV.style.display = 'block'
+    btn.style.display = 'none'
     player1_display_name_and_score.innerHTML += first_player +' : '+score_1
     player2_display_name_and_score.innerHTML += seconed_player +' : '+score_2
     
@@ -82,7 +83,7 @@ xo_buttons = [one, two, three, four, five, six, seven, eight, nine]
 
 function resetButtonsAndMatrix () {
     for (let i = 0; i < xo_buttons.length; i++) {
-        xo_buttons[i].innerHTML = i+1
+        xo_buttons[i].innerHTML = '&nbsp;'
     }
     for (let j = 0; j < ttt_grid_diagonals.length; j++) {
         ttt_grid_diagonals[j] = [0,0,0]
