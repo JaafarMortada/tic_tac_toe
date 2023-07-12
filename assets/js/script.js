@@ -1,3 +1,11 @@
+function isArrayIncluded(mainArray, subArray) {
+    return mainArray.some((arr) =>
+      subArray.every((value, index) => value === arr[index])
+    );
+  }
+  
+
+
 // Get the modal
 var modal = document.getElementById("myModal");
 let gameDIV = document.getElementById('game')
@@ -9,6 +17,8 @@ let second_player_input = document.getElementById('player2')
 let play_btn = document.getElementById('submitNamesAndPlayBtn')
 let score_1 = 0
 let score_2 = 0
+let first_player = first_player_input.value
+let seconed_player = second_player_input.value
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
@@ -38,27 +48,23 @@ window.onclick = function(event) {
 play_btn.addEventListener('click', getNamesAndPlay)
 
 function getNamesAndPlay () {
-    let first_player = first_player_input.value
-    let seconed_player = first_player_input.value
-    player1_display_name_and_score.innerHTML += first_player +' : '+score_1
-    player2_display_name_and_score.innerHTML += seconed_player +' : '+score_2
+    first_player = first_player_input.value
+    seconed_player = second_player_input.value
     modal.style.display = 'none'
     gameDIV.style.display = 'block'
+    player1_display_name_and_score.innerHTML += first_player +' : '+score_1
+    player2_display_name_and_score.innerHTML += seconed_player +' : '+score_2
+    
 }
 
 let ttt_grid_matrix_rows = [[0,0,0],
                             [0,0,0],
-                            [0,0,0],]
+                            [0,0,0]]
 
 let ttt_grid_matrix_columns = [[0,0,0],
                                [0,0,0],
-                               [0,0,0],]
+                               [0,0,0]]
 let ttt_grid_diagonals = [[0,0,0],[0,0,0]]
-
-var clicker = 1
-
-let start_round_btn = document.getElementById('start-round-btn')
-let reset_round_btn = document.getElementById('reset-round-btn')
 
 let one = document.getElementById('one')
 let two = document.getElementById('two')
@@ -69,6 +75,24 @@ let six = document.getElementById('six')
 let seven = document.getElementById('seven')
 let eight = document.getElementById('eight')
 let nine = document.getElementById('nine')
+
+function checkWinConditions (){
+    if (isArrayIncluded(ttt_grid_diagonals, [1,1,1]) || isArrayIncluded(ttt_grid_matrix_rows, [1,1,1])
+            || isArrayIncluded(ttt_grid_matrix_columns, [1,1,1])){
+        score_1 += 1
+        player1_display_name_and_score.innerHTML = first_player+' : '+score_1
+    } else if (isArrayIncluded(ttt_grid_diagonals, [2,2,2]) || isArrayIncluded(ttt_grid_matrix_rows, [2,2,2])
+            || isArrayIncluded(ttt_grid_matrix_columns, [2,2,2])) {
+        score_2 += 1
+        player2_display_name_and_score.innerHTML = first_player+' : '+score_2
+    }
+}
+
+var clicker = 1
+
+let start_round_btn = document.getElementById('start-round-btn')
+let reset_round_btn = document.getElementById('reset-round-btn')
+
 
 one.addEventListener('click', box1Clicked)
 two.addEventListener('click', box2Clicked)
@@ -87,6 +111,7 @@ function box1Clicked () {
         ttt_grid_diagonals[0][0] = 1
         clicker = 2
         one.innerHTML = 'x'
+        
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][0] = 2
         ttt_grid_matrix_columns[0][0] = 2
@@ -94,6 +119,7 @@ function box1Clicked () {
         clicker = 1
         one.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box2Clicked () {
@@ -108,6 +134,7 @@ function box2Clicked () {
         clicker = 1
         two.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box3Clicked () {
@@ -124,6 +151,7 @@ function box3Clicked () {
         clicker = 1
         three.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box4Clicked () {
@@ -138,6 +166,7 @@ function box4Clicked () {
         clicker = 1
         four.innerHTML = 'o'
     }
+    checkWinConditions()
 }
 
 function box5Clicked () {
@@ -156,6 +185,7 @@ function box5Clicked () {
         clicker = 1
         five.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box6Clicked () {
@@ -170,6 +200,7 @@ function box6Clicked () {
         clicker = 1
         six.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box7Clicked () {
@@ -186,6 +217,7 @@ function box7Clicked () {
         clicker = 1
         seven.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box8Clicked () {
@@ -200,6 +232,7 @@ function box8Clicked () {
         clicker = 1
         eight.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
 
 function box9Clicked () {
@@ -216,16 +249,5 @@ function box9Clicked () {
         clicker = 1
         nine.innerHTML = 'o'
     }   
+    checkWinConditions()
 }
-
-
-start_round_btn.addEventListener('click', playRound)
-
-function playRound () {
-    while (number_of_clicks != 9){
-        if (number_of_clicks % 2 == 0){
-            break
-        }
-    }
-}
-
