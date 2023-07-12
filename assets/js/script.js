@@ -119,7 +119,7 @@ function checkWinConditions (){
     } else if (isArrayIncluded(ttt_grid_diagonals, [2,2,2]) || isArrayIncluded(ttt_grid_matrix_rows, [2,2,2])
             || isArrayIncluded(ttt_grid_matrix_columns, [2,2,2])) {
         score_2 += 1
-        player2_display_name_and_score.innerHTML = first_player+' : '+score_2
+        player2_display_name_and_score.innerHTML = seconed_player+' : '+score_2
         resetButtonsAndMatrix()
     }
 }
