@@ -162,3 +162,11 @@ body {
     opacity: 80%;
 }
 
+.ingame-btns{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-wrap: 1;
+    justify-content: space-between;
+    gap: 5px;
+}

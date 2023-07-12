@@ -19,6 +19,7 @@ let score_1 = 0
 let score_2 = 0
 let first_player = first_player_input.value
 let seconed_player = second_player_input.value
+let back_home = document.getElementById('back-home-btn')
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
@@ -80,6 +81,7 @@ let eight = document.getElementById('eight')
 let nine = document.getElementById('nine')
 let reset_round_btn = document.getElementById('reset-round-btn')
 reset_round_btn.addEventListener('click', resetButtonsAndMatrix)
+back_home.addEventListener('click',resetAndGoHome)
 
 xo_buttons = [one, two, three, four, five, six, seven, eight, nine]
 
@@ -99,6 +101,13 @@ function resetButtonsAndMatrix () {
     clicker = 1
 }
 
+function resetAndGoHome (){
+    resetButtonsAndMatrix()
+    score_1 = 0
+    score_2 = 0
+    gameDIV.style.display = 'none'
+    btn.style.display = 'inline-block'
+}
 function checkWinConditions (){
     if (isArrayIncluded(ttt_grid_diagonals, [1,1,1]) || isArrayIncluded(ttt_grid_matrix_rows, [1,1,1])
             || isArrayIncluded(ttt_grid_matrix_columns, [1,1,1])){
