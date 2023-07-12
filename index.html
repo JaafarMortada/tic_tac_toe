@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\css\styles.css">
+</head>
+<body class="mybody">
+    
+    <div class="welcome">
+        <h1>Welcome to TIK-TAK-TOE </h1>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" class="mybtn">Play</button>
+
+    </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close"></span>
+    Enter players names
+    <div class="label-textinput">
+        <label for="player1">Player 1:</label><br>
+        <input type="text" id="player1" name="player1" placeholder="Player 1"><br>
+    </div>
+    <div class="label-textinput">
+        <label for="player2">player 2:</label><br>
+        <input type="text" id="player2" name="player2" placeholder="Player 2"><br>
+    </div>
+    <button id="submitNamesAndPlayBtn" class="submitNamesAndPlayBtn">Play TIC-TAK-TOE</button>
+  </div>
+</div>
+<div id="game" class="game">
+    <p id="player1-display-name-and-score"></p>
+    <p id="player2-display-name-and-score"></p>
+
+    <div class="ttt-grid">
+        <div><button class="ttt-box">1</button><button class="ttt-box">2</button><button class="ttt-box">3</button></div>
+        <div><button class="ttt-box">4</button><button class="ttt-box">5</button><button class="ttt-box">6</button></div>
+        <div><button class="ttt-box">7</button><button class="ttt-box">8</button><button class="ttt-box">9</button></div>
+    </div>
+</div>
+<script src="assets\js\script.js"></script>
+
+</body>
+</html>
