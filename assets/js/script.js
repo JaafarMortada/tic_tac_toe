@@ -55,7 +55,7 @@ let ttt_grid_matrix_columns = [[0,0,0],
                                [0,0,0],]
 let ttt_grid_diagonals = [[0,0,0],[0,0,0]]
 
-let number_of_clicks = 0
+var clicker = 1
 
 let start_round_btn = document.getElementById('start-round-btn')
 let reset_round_btn = document.getElementById('reset-round-btn')
@@ -67,7 +67,7 @@ let four = document.getElementById('four')
 let five = document.getElementById('five')
 let six = document.getElementById('six')
 let seven = document.getElementById('seven')
-let eight = document.getElementById('nine')
+let eight = document.getElementById('eight')
 let nine = document.getElementById('nine')
 
 one.addEventListener('click', box1Clicked)
@@ -81,104 +81,140 @@ eight.addEventListener('click', box8Clicked)
 nine.addEventListener('click', box9Clicked)
 
 function box1Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[0][0] = 1
         ttt_grid_matrix_columns[0][0] = 1
         ttt_grid_diagonals[0][0] = 1
-    } else {
+        clicker = 2
+        one.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][0] = 2
         ttt_grid_matrix_columns[0][0] = 2
         ttt_grid_diagonals[0][0] = 2
+        clicker = 1
+        one.innerHTML = 'o'
     }   
 }
 
 function box2Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[0][1] = 1
         ttt_grid_matrix_columns[1][0] = 1
-    } else {
+        clicker = 2
+        two.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][1] = 2
         ttt_grid_matrix_columns[1][0] = 2
+        clicker = 1
+        two.innerHTML = 'o'
     }   
 }
 
 function box3Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[0][2] = 1
         ttt_grid_matrix_columns[2][0] = 1
         ttt_grid_diagonals[1][0] = 1
-    } else {
+        clicker = 2
+        three.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][2] = 2
         ttt_grid_matrix_columns[2][0] = 2
         ttt_grid_diagonals[1][0] = 2
+        clicker = 1
+        three.innerHTML = 'o'
     }   
 }
 
 function box4Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[1][0] = 1
         ttt_grid_matrix_columns[0][1] = 1
-    } else {
+        clicker = 2
+        four.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[1][0] = 2
         ttt_grid_matrix_columns[0][1] = 2
+        clicker = 1
+        four.innerHTML = 'o'
     }
 }
 
 function box5Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[1][1] = 1
         ttt_grid_matrix_columns[1][1] = 1
         ttt_grid_diagonals[0][1] = 1
         ttt_grid_diagonals[1][1] = 1
-    } else {
+        clicker = 2
+        five.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[1][1] = 2
         ttt_grid_matrix_columns[1][1] = 2
         ttt_grid_diagonals[0][0] = 2
         ttt_grid_diagonals[1][1] = 2
+        clicker = 1
+        five.innerHTML = 'o'
     }   
 }
 
 function box6Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[1][2] = 1
         ttt_grid_matrix_columns[2][1] = 1
-    } else {
+        clicker = 2
+        six.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[1][2] = 2
         ttt_grid_matrix_columns[2][1] = 2
+        clicker = 1
+        six.innerHTML = 'o'
     }   
 }
 
 function box7Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[2][0] = 1
         ttt_grid_matrix_columns[0][2] = 1
         ttt_grid_diagonals[1][2] = 1
-    } else {
+        clicker = 2
+        seven.innerHTML = 'x'
+    } else if (clicker = 2) {
         ttt_grid_matrix_rows[2][0] = 2
         ttt_grid_matrix_columns[0][2] = 2
         ttt_grid_diagonals[1][2] = 2
+        clicker = 1
+        seven.innerHTML = 'o'
     }   
 }
 
 function box8Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[2][1] = 1
         ttt_grid_matrix_columns[1][2] = 1
-    } else {
+        clicker = 2
+        eight.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[2][1] = 2
         ttt_grid_matrix_columns[1][2] = 2
+        clicker = 1
+        eight.innerHTML = 'o'
     }   
 }
 
 function box9Clicked () {
-    if (number_of_clicks % 2 == 0 || number_of_clicks != 0){
+    if (clicker == 1){
         ttt_grid_matrix_rows[2][2] = 1
         ttt_grid_matrix_columns[2][2] = 1
         ttt_grid_diagonals[0][2] = 1
-    } else {
+        clicker = 2
+        nine.innerHTML = 'x'
+    } else if (clicker == 2) {
         ttt_grid_matrix_rows[2][2] = 2
         ttt_grid_matrix_columns[2][2] = 2
         ttt_grid_diagonals[0][2] = 2
+        clicker = 1
+        nine.innerHTML = 'o'
     }   
 }
 
@@ -188,7 +224,7 @@ start_round_btn.addEventListener('click', playRound)
 function playRound () {
     while (number_of_clicks != 9){
         if (number_of_clicks % 2 == 0){
-
+            break
         }
     }
 }
