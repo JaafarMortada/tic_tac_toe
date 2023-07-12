@@ -2,7 +2,7 @@ function isArrayIncluded(mainArray, subArray) {
     return mainArray.some((arr) =>
       subArray.every((value, index) => value === arr[index])
     );
-  }
+  } // chatGPT
   
 
 
@@ -57,6 +57,8 @@ function getNamesAndPlay () {
     
 }
 
+var clicker = 1
+
 let ttt_grid_matrix_rows = [[0,0,0],
                             [0,0,0],
                             [0,0,0]]
@@ -76,19 +78,41 @@ let seven = document.getElementById('seven')
 let eight = document.getElementById('eight')
 let nine = document.getElementById('nine')
 
+xo_buttons = [one, two, three, four, five, six, seven, eight, nine]
+
+function resetButtonsAndMatrix () {
+    for (let i = 0; i < xo_buttons.length; i++) {
+        xo_buttons[i].innerHTML = i+1
+    }
+    for (let j = 0; j < ttt_grid_diagonals.length; j++) {
+        ttt_grid_diagonals[j] = [0,0,0]
+    }
+    for (let k = 0; k < ttt_grid_matrix_rows.length; k++) {
+        ttt_grid_matrix_rows[k] = [0,0,0]
+    }
+    for (let l = 0; l < ttt_grid_matrix_columns.length; l++) {
+        ttt_grid_matrix_columns[l] = [0,0,0]
+    }
+    clicker = 1
+}
+
+
+
 function checkWinConditions (){
     if (isArrayIncluded(ttt_grid_diagonals, [1,1,1]) || isArrayIncluded(ttt_grid_matrix_rows, [1,1,1])
             || isArrayIncluded(ttt_grid_matrix_columns, [1,1,1])){
         score_1 += 1
         player1_display_name_and_score.innerHTML = first_player+' : '+score_1
+        resetButtonsAndMatrix()
+        
     } else if (isArrayIncluded(ttt_grid_diagonals, [2,2,2]) || isArrayIncluded(ttt_grid_matrix_rows, [2,2,2])
             || isArrayIncluded(ttt_grid_matrix_columns, [2,2,2])) {
         score_2 += 1
         player2_display_name_and_score.innerHTML = first_player+' : '+score_2
+        resetButtonsAndMatrix()
     }
 }
 
-var clicker = 1
 
 let start_round_btn = document.getElementById('start-round-btn')
 let reset_round_btn = document.getElementById('reset-round-btn')
