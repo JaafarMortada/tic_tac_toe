@@ -78,6 +78,8 @@ let six = document.getElementById('six')
 let seven = document.getElementById('seven')
 let eight = document.getElementById('eight')
 let nine = document.getElementById('nine')
+let reset_round_btn = document.getElementById('reset-round-btn')
+reset_round_btn.addEventListener('click', resetButtonsAndMatrix)
 
 xo_buttons = [one, two, three, four, five, six, seven, eight, nine]
 
@@ -97,8 +99,6 @@ function resetButtonsAndMatrix () {
     clicker = 1
 }
 
-
-
 function checkWinConditions (){
     if (isArrayIncluded(ttt_grid_diagonals, [1,1,1]) || isArrayIncluded(ttt_grid_matrix_rows, [1,1,1])
             || isArrayIncluded(ttt_grid_matrix_columns, [1,1,1])){
@@ -115,8 +115,6 @@ function checkWinConditions (){
 }
 
 
-let start_round_btn = document.getElementById('start-round-btn')
-let reset_round_btn = document.getElementById('reset-round-btn')
 
 
 one.addEventListener('click', box1Clicked)
