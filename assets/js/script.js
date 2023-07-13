@@ -135,15 +135,23 @@ seven.addEventListener('click', box7Clicked)
 eight.addEventListener('click', box8Clicked)
 nine.addEventListener('click', box9Clicked)
 
+function checkfull(somebutton) {
+    if (somebutton.innerHTML == 'x' || somebutton.innerHTML == 'o'){
+        return
+    }
+}
+
 function box1Clicked () {
-    if (clicker == 1){
+    if (one.innerHTML == 'x' || one.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[0][0] = 1
         ttt_grid_matrix_columns[0][0] = 1
         ttt_grid_diagonals[0][0] = 1
         clicker = 2
         one.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
         
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][0] = 2
@@ -152,7 +160,6 @@ function box1Clicked () {
         clicker = 1
         one.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }
     if (number_checked==9){
         resetButtonsAndMatrix()
@@ -162,20 +169,21 @@ function box1Clicked () {
 }
 
 function box2Clicked () {
-    if (clicker == 1){
+    if (two.innerHTML == 'x' || two.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[0][1] = 1
         ttt_grid_matrix_columns[1][0] = 1
         clicker = 2
         two.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][1] = 2
         ttt_grid_matrix_columns[1][0] = 2
         clicker = 1
         two.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -185,14 +193,16 @@ function box2Clicked () {
 }
 
 function box3Clicked () {
-    if (clicker == 1){
+    if (three.innerHTML == 'x' || three.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[0][2] = 1
         ttt_grid_matrix_columns[2][0] = 1
         ttt_grid_diagonals[1][0] = 1
         clicker = 2
         three.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[0][2] = 2
         ttt_grid_matrix_columns[2][0] = 2
@@ -200,7 +210,6 @@ function box3Clicked () {
         clicker = 1
         three.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }   
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -210,20 +219,21 @@ function box3Clicked () {
 }
 
 function box4Clicked () {
-    if (clicker == 1){
+    if (four.innerHTML == 'x' || four.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[1][0] = 1
         ttt_grid_matrix_columns[0][1] = 1
         clicker = 2
         four.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[1][0] = 2
         ttt_grid_matrix_columns[0][1] = 2
         clicker = 1
         four.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -233,7 +243,10 @@ function box4Clicked () {
 }
 
 function box5Clicked () {
-    if (clicker == 1){
+    if (five.innerHTML == 'x' || five.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[1][1] = 1
         ttt_grid_matrix_columns[1][1] = 1
         ttt_grid_diagonals[0][1] = 1
@@ -241,7 +254,6 @@ function box5Clicked () {
         clicker = 2
         five.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[1][1] = 2
         ttt_grid_matrix_columns[1][1] = 2
@@ -250,7 +262,6 @@ function box5Clicked () {
         clicker = 1
         five.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }   
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -260,20 +271,21 @@ function box5Clicked () {
 }
 
 function box6Clicked () {
-    if (clicker == 1){
+    if (six.innerHTML == 'x' || six.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[1][2] = 1
         ttt_grid_matrix_columns[2][1] = 1
         clicker = 2
         six.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[1][2] = 2
         ttt_grid_matrix_columns[2][1] = 2
         clicker = 1
         six.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }   
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -283,14 +295,16 @@ function box6Clicked () {
 }
 
 function box7Clicked () {
-    if (clicker == 1){
+    if (seven.innerHTML == 'x' || seven.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[2][0] = 1
         ttt_grid_matrix_columns[0][2] = 1
         ttt_grid_diagonals[1][2] = 1
         clicker = 2
         seven.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker = 2) {
         ttt_grid_matrix_rows[2][0] = 2
         ttt_grid_matrix_columns[0][2] = 2
@@ -298,7 +312,6 @@ function box7Clicked () {
         clicker = 1
         seven.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }   
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -308,20 +321,21 @@ function box7Clicked () {
 }
 
 function box8Clicked () {
-    if (clicker == 1){
+    if (eight.innerHTML == 'x' || eight.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[2][1] = 1
         ttt_grid_matrix_columns[1][2] = 1
         clicker = 2
         eight.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[2][1] = 2
         ttt_grid_matrix_columns[1][2] = 2
         clicker = 1
         eight.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }   
     if (number_checked == 9){
         resetButtonsAndMatrix()
@@ -331,14 +345,16 @@ function box8Clicked () {
 }
 
 function box9Clicked () {
-    if (clicker == 1){
+    if (nine.innerHTML == 'x' || nine.innerHTML == 'o'){
+        return
+    }
+    else if (clicker == 1){
         ttt_grid_matrix_rows[2][2] = 1
         ttt_grid_matrix_columns[2][2] = 1
         ttt_grid_diagonals[0][2] = 1
         clicker = 2
         nine.innerHTML = 'x'
         number_checked++
-        console.log(number_checked)
     } else if (clicker == 2) {
         ttt_grid_matrix_rows[2][2] = 2
         ttt_grid_matrix_columns[2][2] = 2
@@ -346,7 +362,6 @@ function box9Clicked () {
         clicker = 1
         nine.innerHTML = 'o'
         number_checked++
-        console.log(number_checked)
     }   
     if (number_checked == 9){
         resetButtonsAndMatrix()
